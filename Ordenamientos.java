@@ -35,11 +35,32 @@ public class Ordenamientos{
         quicksort(arreglo, indiceParticion + 1, derecha);
     }
 }
+
+    public static void bubblesort(int arreglo[]){
+	int i,num_aux;
+	boolean cambiado;
+	
+	while(true){
+	    cambiado=false;
+	    for(i=1;i<arreglo.length;i++){
+		if(arreglo[i]<arreglo[i-1]){
+		    num_aux=arreglo[i];
+		    arreglo[i]=arreglo[i-1];
+		    arreglo[i-1]=num_aux;
+		    cambiado=true;
+		}
+
+	    }
+	    if(cambiado==false){
+		break;
+	    }
+	}
+    }
     
 public static void main(String[] args){
 
      
-    int i,x,b,y;
+    int resp,rango,i,x,b,y;
    
 
     Scanner sc = new Scanner(System.in);
@@ -48,16 +69,37 @@ public static void main(String[] args){
 	b=x;
 	 int A[] = new int[x];
 	y=x-1;
-		for(i=0; i<=y; i++){
-		    A[i]= (int)(Math.random()*100000);
+	
+			System.out.println("Escribe el máximo para el rango de números enteros en el cuál quieres que se generen números aleatorios");
+	rango = sc.nextInt();
+
+		System.out.println("Elige qué método de ordenamineto desea utilizar \n1.Quick Sort \n2.Bubble Sort");
+		resp=sc.nextInt();
+	for(i=0; i<=y; i++){
+		    A[i]= (int)(Math.random()*rango);
 		    //	System.out.println(A[i]+ " ");
 		    
       	}
+		switch(resp){
 
-		quicksort(A,0,y);
+		case 1:
+		    quicksort(A,0,y);
 
 		for(i=0;i<=y;i++){
 		    System.out.print(A[i]+" ");
+		}
+		break;
+
+	       	case 2:
+		    bubblesort(A);
+
+		for(i=0;i<=y;i++){
+		    System.out.print(A[i]+" ");
+		}
+		break;
+
+		default: System.out.println("Esa no es una opción válida");
+		    break;
 		}
 
 
