@@ -22,21 +22,17 @@ public class Ordenamientos{
                 derecha--;
             } 
             if (izquierda >= derecha) {
-		 int temporal = arreglo[izquierda];
-                arreglo[izquierda] = arreglo[derecha];
-                arreglo[derecha] = temporal;
-                izquierda++;
-                derecha--;
+		
 		 return derecha;
 		
-            }/* else {
+            } else {
                 int temporal = arreglo[izquierda];
                 arreglo[izquierda] = arreglo[derecha];
                 arreglo[derecha] = temporal;
                 izquierda++;
                 derecha--;
 		
-		}*/
+            }
             // El while se repite hasta que izquierda >= derecha
         }
     }
